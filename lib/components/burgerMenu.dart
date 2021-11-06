@@ -3,9 +3,7 @@ import 'package:calorie_counter/components/variables.dart';
 import 'package:calorie_counter/components/FoodItemCard.dart';
 import 'package:calorie_counter/components/LongFoodItemCard.dart';
 
-
 class BurgerMenu extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,11 +11,10 @@ class BurgerMenu extends StatelessWidget {
       children: [
         FoodItemCard(
           image: assetImage('big_mac.png', 70, 70),
-
           calories: 550,
           foodName: 'Big Mac',
           counter: 0,
-          foodNameSize: 25,
+          foodNameSize: 20,
         ),
         SizedBox(
           width: double.infinity,
@@ -32,7 +29,7 @@ class BurgerMenu extends StatelessWidget {
           foodName: 'Cheese',
           foodNameUnder: 'Burger',
           counter: 0,
-          foodNameSize: 23,
+          foodNameSize: 20,
         ),
         SizedBox(
           width: double.infinity,
@@ -41,10 +38,11 @@ class BurgerMenu extends StatelessWidget {
             color: Color(0xff2C000000),
           ),
         ),
-        FoodItemCard(
+        LongFoodItemCard(
             image: assetImage('Mc_Chicken.png', 75, 75),
-            foodName: 'McChicken',
-            foodNameSize: 25,
+            foodName: 'Chicken',
+            foodNameUnder: 'Burger',
+            foodNameSize: 20,
             calories: 357,
             counter: 0),
         SizedBox(
@@ -55,10 +53,10 @@ class BurgerMenu extends StatelessWidget {
           ),
         ),
         LongFoodItemCard(
-            image: assetImage('quarter_pounder.png', 90, 90),
+            image: assetImage('quarter_pounder.png', 80, 80),
             foodName: 'Quarter',
             foodNameUnder: 'Pounder',
-            foodNameSize: 23,
+            foodNameSize: 20,
             calories: 417,
             counter: 0)
       ],
