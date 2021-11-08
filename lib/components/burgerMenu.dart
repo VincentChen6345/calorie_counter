@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:calorie_counter/components/variables.dart';
 import 'package:calorie_counter/components/LongFoodItemCard.dart';
-import 'package:calorie_counter/screens/homePage.dart';
-import 'package:calorie_counter/components/Calculator_Brain.dart';
 
 class BurgerMenu extends StatefulWidget {
   @override
@@ -20,24 +18,18 @@ class _BurgerMenuState extends State<BurgerMenu> {
           calories: 550,
           foodName: 'Big',
           foodNameUnder: "Mac",
-
           counterText: '${bigMacCount.toStringAsFixed(0)}',
           increase: () {
             setState(() {
-               bigMacCount++;
-
+              bigMacCount++;
             });
           },
-          decrease:  () {
+          decrease: () {
             setState(() {
-              if (bigMacCount>=1)
-              bigMacCount--;
+              if (bigMacCount >= 1) bigMacCount--;
             });
           },
-
-
         ),
-
         SizedBox(
           width: double.infinity,
           height: 1,
@@ -56,10 +48,9 @@ class _BurgerMenuState extends State<BurgerMenu> {
               cheeseBurgerCount++;
             });
           },
-          decrease:  () {
+          decrease: () {
             setState(() {
-              if (cheeseBurgerCount>=1)
-                cheeseBurgerCount--;
+              if (cheeseBurgerCount >= 1) cheeseBurgerCount--;
             });
           },
         ),
@@ -71,24 +62,22 @@ class _BurgerMenuState extends State<BurgerMenu> {
           ),
         ),
         LongFoodItemCard(
-            image: assetImage('Mc_Chicken.png', 75, 75),
-            foodName: 'Chicken',
-            foodNameUnder: 'Burger',
+          image: assetImage('Mc_Chicken.png', 75, 75),
+          foodName: 'Chicken',
+          foodNameUnder: 'Burger',
           counterText: '${chickenBurgerCount.toStringAsFixed(0)}',
-            calories: 357,
-            increase: () {
-              setState(() {
-                chickenBurgerCount++;
-              });
-            },
-            decrease:  () {
-              setState(() {
-                if (chickenBurgerCount>=1)
-                  chickenBurgerCount--;
-              });
-            },
-
-  ),
+          calories: 357,
+          increase: () {
+            setState(() {
+              chickenBurgerCount++;
+            });
+          },
+          decrease: () {
+            setState(() {
+              if (chickenBurgerCount >= 1) chickenBurgerCount--;
+            });
+          },
+        ),
         SizedBox(
           width: double.infinity,
           height: 1,
@@ -97,23 +86,22 @@ class _BurgerMenuState extends State<BurgerMenu> {
           ),
         ),
         LongFoodItemCard(
-            image: assetImage('quarter_pounder.png', 80, 80),
-            foodName: 'Quarter',
-            foodNameUnder: 'Pounder',
+          image: assetImage('quarter_pounder.png', 80, 80),
+          foodName: 'Quarter',
+          foodNameUnder: 'Pounder',
           counterText: '${quarterPounderCount.toStringAsFixed(0)}',
-            calories: 417,
-            increase: () {
-              setState(() {
-                quarterPounderCount++;
-              });
-            },
-            decrease:  () {
-              setState(() {
-                if (quarterPounderCount>=1)
-                  quarterPounderCount--;
-              });
-            },
-           )
+          calories: 417,
+          increase: () {
+            setState(() {
+              quarterPounderCount++;
+            });
+          },
+          decrease: () {
+            setState(() {
+              if (quarterPounderCount >= 1) quarterPounderCount--;
+            });
+          },
+        )
       ],
     );
   }

@@ -16,9 +16,6 @@ class homePage extends StatefulWidget {
 class _homePageState extends State<homePage> {
   FoodCategory selectedCategory = FoodCategory.burger;
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,7 +38,6 @@ class _homePageState extends State<homePage> {
                     onTap: () {
                       setState(() {
                         selectedCategory = FoodCategory.burger;
-                        print('card 1');
                       });
                     },
                   ),
@@ -59,7 +55,6 @@ class _homePageState extends State<homePage> {
                     onTap: () {
                       setState(() {
                         selectedCategory = FoodCategory.sides;
-                        print('card 2');
                       });
                     },
                   ),
@@ -94,12 +89,12 @@ class _homePageState extends State<homePage> {
                       //navigate to second page
                       CalculatorBrain calc = CalculatorBrain(
                           bigMacCount: bigMacCount,
-                          cheeseBurgerCount:cheeseBurgerCount ,
+                          cheeseBurgerCount: cheeseBurgerCount,
                           chickenBurgerCount: chickenBurgerCount,
                           quarterPounderCount: quarterPounderCount,
                           largeFriesCount: largeFriesCount,
                           chickenNuggetCount: chickenNuggetCount,
-                          largeCokeCount:largeCokeCount ,
+                          largeCokeCount: largeCokeCount,
                           softServeCount: softServeCount);
 
                       Navigator.push(
@@ -117,11 +112,13 @@ class _homePageState extends State<homePage> {
                 width: 10,
               ),
               Expanded(
-                child: BottomButton(onPressed: (){
-                  setState(() {
-                  reset();
-                  });
-                }, text: 'Reset'),
+                child: BottomButton(
+                    onPressed: () {
+                      setState(() {
+                        reset();
+                      });
+                    },
+                    text: 'Reset'),
               )
             ],
           )

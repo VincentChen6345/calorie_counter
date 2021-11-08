@@ -4,14 +4,10 @@ import 'package:calorie_counter/components/variables.dart';
 class LongFoodItemCard extends StatefulWidget {
   String foodName;
   String foodNameUnder;
-
   int calories;
-
   void Function() increase;
   void Function() decrease;
-
   String counterText;
-
   Image image;
 
   LongFoodItemCard({
@@ -88,11 +84,3 @@ class _LongFoodItemCardState extends State<LongFoodItemCard> {
     );
   }
 }
-
-// setState(() {
-// if(widget.counter>=1)
-// widget.counter--;
-// widget.counterName=widget.counter;
-//
-//
-// });

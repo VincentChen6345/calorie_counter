@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:calorie_counter/components/variables.dart';
 
 class BottomButton extends StatelessWidget {
-var onPressed;
-String text;
+  var onPressed;
+  String text;
 
-BottomButton({required this.onPressed, required this.text});
+  BottomButton({required this.onPressed, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,10 @@ BottomButton({required this.onPressed, required this.text});
             borderRadius: BorderRadius.all(Radius.circular(30))),
         child: Text(
           text,
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
-          color: primary_Color),
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: primary_Color),
         ),
         alignment: Alignment.center,
-        // width: double.infinity,
         height: 60,
         margin: EdgeInsets.only(bottom: 8),
       ),

@@ -1,7 +1,6 @@
 import 'package:calorie_counter/components/BottomButton.dart';
 import 'package:flutter/material.dart';
 import 'package:calorie_counter/components/variables.dart';
-import 'package:calorie_counter/components/Calculator_Brain.dart';
 
 class ResultsPage extends StatelessWidget {
   final String calorieSum;
@@ -13,6 +12,9 @@ class ResultsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
         title: Center(
             child: Text(
           "McDonald's Calorie Counter",
@@ -52,7 +54,6 @@ class ResultsPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-
                             calorieSum,
                             style: TextStyle(
                                 fontSize: 80, fontWeight: FontWeight.bold),
@@ -105,6 +106,5 @@ class ResultsPage extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

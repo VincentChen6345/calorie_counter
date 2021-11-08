@@ -31,10 +31,10 @@ class _sidesMenuState extends State<sidesMenu> {
           counterText: '${largeFriesCount.toStringAsFixed(0)}',
         ),
         SizedBox(
-                  width: double.infinity,
-                  height: 1,
-                  child: Container(
-                    color: Color(0xff2C000000),
+          width: double.infinity,
+          height: 1,
+          child: Container(
+            color: Color(0xff2C000000),
           ),
         ),
         LongFoodItemCard(
@@ -43,19 +43,16 @@ class _sidesMenuState extends State<sidesMenu> {
           counterText: '${chickenNuggetCount.toStringAsFixed(0)}',
           foodName: '1 Chicken',
           foodNameUnder: 'Nugget',
-
           increase: () {
             setState(() {
               chickenNuggetCount++;
             });
           },
-          decrease:  () {
+          decrease: () {
             setState(() {
-              if (chickenNuggetCount>=1)
-                chickenNuggetCount--;
+              if (chickenNuggetCount >= 1) chickenNuggetCount--;
             });
           },
-
         ),
         SizedBox(
           width: double.infinity,
@@ -65,23 +62,22 @@ class _sidesMenuState extends State<sidesMenu> {
           ),
         ),
         LongFoodItemCard(
-            image: assetImage('large_coke.png', 80, 75),
-            foodName: 'Large',
-            foodNameUnder: 'Coke',
+          image: assetImage('large_coke.png', 80, 75),
+          foodName: 'Large',
+          foodNameUnder: 'Coke',
           counterText: '${largeCokeCount.toStringAsFixed(0)}',
-            calories: 224,
-            increase: () {
-              setState(() {
-                largeCokeCount++;
-              });
-            },
-            decrease:  () {
-              setState(() {
-                if (largeCokeCount>=1)
-                  largeCokeCount--;
-              });
-            },
-          ),
+          calories: 224,
+          increase: () {
+            setState(() {
+              largeCokeCount++;
+            });
+          },
+          decrease: () {
+            setState(() {
+              if (largeCokeCount >= 1) largeCokeCount--;
+            });
+          },
+        ),
         SizedBox(
           width: double.infinity,
           height: 1,
@@ -90,22 +86,22 @@ class _sidesMenuState extends State<sidesMenu> {
           ),
         ),
         LongFoodItemCard(
-            image: assetImage('soft_serve.png', 90, 80),
-            foodName: 'Soft',
-            foodNameUnder: 'Serve',
+          image: assetImage('soft_serve.png', 90, 80),
+          foodName: 'Soft',
+          foodNameUnder: 'Serve',
           counterText: '${softServeCount.toStringAsFixed(0)}',
-            calories: 200,
-            increase: () {
-              setState(() {
-                softServeCount++;
-              });
-            },
-            decrease:  () {
-              setState(() {
-                if (softServeCount>=1)
-                  softServeCount--;
-              });
-            },)
+          calories: 200,
+          increase: () {
+            setState(() {
+              softServeCount++;
+            });
+          },
+          decrease: () {
+            setState(() {
+              if (softServeCount >= 1) softServeCount--;
+            });
+          },
+        )
       ],
     );
   }
