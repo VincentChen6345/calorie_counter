@@ -4,6 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:calorie_counter/components/resusable_card.dart';
 import 'package:calorie_counter/components/burgerMenu.dart';
 import 'package:calorie_counter/components/sidesMenu.dart';
+import 'package:calorie_counter/components/BottomButton.dart';
+import 'package:calorie_counter/screens/resultsPage.dart';
+import 'package:calorie_counter/components/Calculator_Brain.dart';
 
 class homePage extends StatefulWidget {
   @override
@@ -12,6 +15,9 @@ class homePage extends StatefulWidget {
 
 class _homePageState extends State<homePage> {
   FoodCategory selectedCategory = FoodCategory.burger;
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -71,33 +77,42 @@ class _homePageState extends State<homePage> {
               child: Padding(
                 padding: const EdgeInsets.all(4.0),
                 child:
-                // BurgerMenu()
-                selectedCategory==FoodCategory.burger?BurgerMenu():sidesMenu()
-                ,
+                    // BurgerMenu()
+                    selectedCategory == FoodCategory.burger
+                        ? BurgerMenu()
+                        : sidesMenu(),
               ),
             ),
           ),
-          GestureDetector(
-            child: Container(
-              decoration: BoxDecoration(
-                  boxShadow: boxShadow,
-                  color: Color(0xFF0080EC),
-                  borderRadius: BorderRadius.all(Radius.circular(30))),
-              child: Text(
-                'Total Calories',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-              alignment: Alignment.center,
-              width: double.infinity,
-              height: 60,
-              margin: EdgeInsets.only(bottom: 8),
-            ),
+          BottomButton(
+            text: 'Total Calories',
+            onPressed: () {
+              setState(() {
+                //navigate to second page
+                CalculatorBrain calc = CalculatorBrain(
+                    bigMacCount: bigMacCount,
+                    cheeseBurgerCount:cheeseBurgerCount ,
+                    chickenBurgerCount: chickenBurgerCount,
+                    quarterPounderCount: quarterPounderCount,
+                    largeFriesCount: largeFriesCount,
+                    chickenNuggetCount: chickenNuggetCount,
+                    largeCokeCount:largeCokeCount ,
+                    softServeCount: softServeCount);
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultsPage(
+                              calorieSum: calc.calculateCalories(),
+                              resultText: calc.displayMessage(),
+                            )));
+              });
+            },
           )
         ],
       ),
     );
   }
 }
-
 
 enum FoodCategory { burger, sides }
