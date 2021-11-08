@@ -7,6 +7,7 @@ import 'package:calorie_counter/components/sidesMenu.dart';
 import 'package:calorie_counter/components/BottomButton.dart';
 import 'package:calorie_counter/screens/resultsPage.dart';
 import 'package:calorie_counter/components/Calculator_Brain.dart';
+import 'package:flutter/services.dart';
 
 class homePage extends StatefulWidget {
   @override
@@ -18,6 +19,9 @@ class _homePageState extends State<homePage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(

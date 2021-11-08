@@ -1,7 +1,7 @@
 import 'package:calorie_counter/components/variables.dart';
 import 'package:flutter/material.dart';
 import 'screens/homePage.dart';
-
+import 'package:flutter/services.dart';
 import 'components/variables.dart';
 
 void main() {
