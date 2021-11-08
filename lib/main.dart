@@ -6,6 +6,7 @@ import 'components/variables.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     theme: ThemeData.light().copyWith(
       primaryColor: primary_Color,
       scaffoldBackgroundColor: backgroundColor,

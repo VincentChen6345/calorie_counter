@@ -84,30 +84,46 @@ class _homePageState extends State<homePage> {
               ),
             ),
           ),
-          BottomButton(
-            text: 'Total Calories',
-            onPressed: () {
-              setState(() {
-                //navigate to second page
-                CalculatorBrain calc = CalculatorBrain(
-                    bigMacCount: bigMacCount,
-                    cheeseBurgerCount:cheeseBurgerCount ,
-                    chickenBurgerCount: chickenBurgerCount,
-                    quarterPounderCount: quarterPounderCount,
-                    largeFriesCount: largeFriesCount,
-                    chickenNuggetCount: chickenNuggetCount,
-                    largeCokeCount:largeCokeCount ,
-                    softServeCount: softServeCount);
+          Row(
+            children: [
+              Expanded(
+                child: BottomButton(
+                  text: 'Total Calories',
+                  onPressed: () {
+                    setState(() {
+                      //navigate to second page
+                      CalculatorBrain calc = CalculatorBrain(
+                          bigMacCount: bigMacCount,
+                          cheeseBurgerCount:cheeseBurgerCount ,
+                          chickenBurgerCount: chickenBurgerCount,
+                          quarterPounderCount: quarterPounderCount,
+                          largeFriesCount: largeFriesCount,
+                          chickenNuggetCount: chickenNuggetCount,
+                          largeCokeCount:largeCokeCount ,
+                          softServeCount: softServeCount);
 
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ResultsPage(
-                              calorieSum: calc.calculateCalories(),
-                              resultText: calc.displayMessage(),
-                            )));
-              });
-            },
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ResultsPage(
+                                    calorieSum: calc.calculateCalories(),
+                                    resultText: calc.displayMessage(),
+                                  )));
+                    });
+                  },
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Expanded(
+                child: BottomButton(onPressed: (){
+                  setState(() {
+                  reset();
+                  });
+                }, text: 'Reset'),
+              )
+            ],
           )
         ],
       ),
