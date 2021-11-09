@@ -41,9 +41,9 @@ class CalculatorBrain {
 
   String displayMessage() {
     if (_calorieSum > 2000) {
-      return 'Thats A LOT of calories and very unhealthy for you';
+      return 'Thats A LOT of calories and very unhealthy for you!';
     } else {
-      return 'Excessive junk food can lead to heart attack, diabetes and high blood pressure';
+      return 'Excessive junk food can lead to heart attack, diabetes and high blood pressure.';
     }
   }
 }

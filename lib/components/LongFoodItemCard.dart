@@ -37,17 +37,17 @@ class _LongFoodItemCardState extends State<LongFoodItemCard> {
             children: [
               Text(
                 '${widget.foodName}',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
               Text(
                 '${widget.foodNameUnder}',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
               ),
             ],
           ),
           Text(
             '(${widget.calories.toString()} cal)',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           Spacer(),
           Column(
